@@ -3,3 +3,9 @@
 2021/06/12-10:16:52.859 1aa4e Level-0 table #5: started
 2021/06/12-10:16:52.887 1aa4e Level-0 table #5: 1428430 bytes OK
 2021/06/12-10:16:52.890 1aa4e Delete type=0 #3
+2021/06/12-10:26:32.173 1aba1 Level-0 table #7: started
+2021/06/12-10:26:32.203 1aba1 Level-0 table #7: 1584789 bytes OK
+2021/06/12-10:26:32.206 1aba1 Delete type=0 #4
+2021/06/12-10:36:47.759 1ae31 Level-0 table #9: started
+2021/06/12-10:36:47.792 1ae31 Level-0 table #9: 2146419 bytes OK
+2021/06/12-10:36:47.796 1ae31 Delete type=0 #6
