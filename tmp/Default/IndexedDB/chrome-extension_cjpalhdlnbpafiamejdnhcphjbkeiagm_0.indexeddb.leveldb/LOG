@@ -1,0 +1,6 @@
+2021/06/12-10:16:50.003 1aa4e Creating DB /home/telobacm/React/traveloka/tmp/Default/IndexedDB/chrome-extension_cjpalhdlnbpafiamejdnhcphjbkeiagm_0.indexeddb.leveldb since it was missing.
+2021/06/12-10:16:50.010 1aa4e Reusing MANIFEST /home/telobacm/React/traveloka/tmp/Default/IndexedDB/chrome-extension_cjpalhdlnbpafiamejdnhcphjbkeiagm_0.indexeddb.leveldb/MANIFEST-000001
+2021/06/12-10:16:52.019 1aa53 Level-0 table #5: started
+2021/06/12-10:16:52.020 1aa53 Level-0 table #5: 243 bytes OK
+2021/06/12-10:16:52.022 1aa53 Delete type=0 #3
+2021/06/12-10:16:52.022 1aa53 Manual compaction at level-0 from (begin) .. (end); will stop at (end)

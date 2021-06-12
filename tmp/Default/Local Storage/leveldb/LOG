@@ -1,0 +1,9 @@
+2021/06/11-23:26:44.009 5 Reusing MANIFEST /home/telobacm/React/traveloka/tmp/Default/Local Storage/leveldb/MANIFEST-000001
+2021/06/11-23:26:44.011 5 Recovering log #3
+2021/06/11-23:26:44.012 5 Reusing old log /home/telobacm/React/traveloka/tmp/Default/Local Storage/leveldb/000003.log 
+2021/06/11-23:32:38.556 8 Level-0 table #5: started
+2021/06/11-23:32:38.585 8 Level-0 table #5: 449063 bytes OK
+2021/06/11-23:32:38.589 8 Delete type=0 #3
+2021/06/12-10:20:16.221 f Level-0 table #7: started
+2021/06/12-10:20:16.226 f Level-0 table #7: 16822 bytes OK
+2021/06/12-10:20:16.230 f Delete type=0 #4

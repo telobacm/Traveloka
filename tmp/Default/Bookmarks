@@ -1,0 +1,90 @@
+{
+   "checksum": "577c1ba59d42477ef50783b679340601",
+   "roots": {
+      "bookmark_bar": {
+         "children": [ {
+            "date_added": "13255061950270448",
+            "guid": "fad3a949-0421-450c-ba29-d1aeacab1e77",
+            "id": "5",
+            "name": "Translate",
+            "type": "url",
+            "url": "https://translate.google.com/"
+         }, {
+            "date_added": "13255061953801747",
+            "guid": "52876bee-0987-4f3a-9ccd-2515cb2a737a",
+            "id": "6",
+            "name": "YouTube",
+            "type": "url",
+            "url": "https://youtube.com/"
+         }, {
+            "date_added": "13258784931615228",
+            "guid": "e70a66fb-30b1-4033-9fe8-f43229a06460",
+            "id": "7",
+            "name": "Instagram",
+            "type": "url",
+            "url": "https://www.instagram.com/"
+         }, {
+            "date_added": "13263147936583050",
+            "guid": "8fc477c2-ebcd-4822-b3b8-1985aeaf663c",
+            "id": "8",
+            "name": "https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.css",
+            "type": "url",
+            "url": "https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.css"
+         }, {
+            "date_added": "13267718065000012",
+            "guid": "b40bc35d-32cc-49bb-9f58-515b6f9f142d",
+            "id": "9",
+            "name": "DOKUMENTASI API PESAWAT { JSON } - PDF Download Gratis",
+            "type": "url",
+            "url": "https://docplayer.info/36432477-Dokumentasi-api-pesawat-json.html"
+         } ],
+         "date_added": "13267902403965338",
+         "date_modified": "13267718065000012",
+         "guid": "00000000-0000-4000-a000-000000000002",
+         "id": "1",
+         "name": "Bookmarks bar",
+         "type": "folder"
+      },
+      "other": {
+         "children": [ {
+            "date_added": "13259262595587457",
+            "guid": "35f1ab58-b970-4c99-9999-5e31c980cd50",
+            "id": "10",
+            "name": "Destructuring Nested Objects. I love destructuring. However, as I use… | by Ronald Chen | Medium",
+            "type": "url",
+            "url": "https://medium.com/@pyrolistical/destructuring-nested-objects-9dabdd01a3b8"
+         }, {
+            "date_added": "13260359778104072",
+            "guid": "d9ca327c-c2f3-4add-8e93-a491234fcaad",
+            "id": "11",
+            "name": "Bagaimana cara memindahkan cabang Git ke repositori sendiri?",
+            "type": "url",
+            "url": "https://qastack.id/programming/2227062/how-do-i-move-a-git-branch-out-into-its-own-repository"
+         }, {
+            "date_added": "13261313642312173",
+            "guid": "aa8588f6-4f75-4a0e-9026-c1c7d4c3936d",
+            "id": "12",
+            "name": "Subscene - Subtitles for Money Heist (La Casa de Papel) - First Season",
+            "type": "url",
+            "url": "https://subscene.com/subtitles/la-casa-de-papel"
+         } ],
+         "date_added": "13267902403965340",
+         "date_modified": "13261313642312173",
+         "guid": "00000000-0000-4000-a000-000000000003",
+         "id": "2",
+         "name": "Other bookmarks",
+         "type": "folder"
+      },
+      "synced": {
+         "children": [  ],
+         "date_added": "13267902403965341",
+         "date_modified": "0",
+         "guid": "00000000-0000-4000-a000-000000000004",
+         "id": "3",
+         "name": "Mobile bookmarks",
+         "type": "folder"
+      }
+   },
+   "sync_metadata": "CugBCscBCIiBAhLAARKMAQgCEk4KBgoCYm0QARAzGhIJAIDV/IjEBQAhAIDV/IjEBQAiFAkdBLgMicQFABADGZWsVl3AY6+UMhgKFggCEfoUlA2JxAUAGAAhAAAAAAAAAAASOAoGCgJiZBAAEDMaEgkAgNX8iMQFACEAgNX8iMQFADIYChYIAhH6FJQNicQFABgAIQAAAAAAAAAAIAAyHzQ0RlJiMnNKbU1vU2NIcmJ1TERWa3ZvN2JLWGpueGNInPLi8Z8vcJzy4vGfLxIAIAEqGHplcWlnWVcyUVhwczNSZWZ0RDQ1RWc9PRKtAggMEqgCChxCYnJoa0x4UzhpVW1UUmI0YjA5cGdqbFNndDg9EqYBWjpBRHF0QVp3Q2lQOHFnNmZhYXBOL0dJdXlkTEtESGxLVlhlQ3ZZNjQwaVRnRkx1MkMrK3lwVkRMbFAwQTE0ZUdJL3hoWUVDeVVab1JTL0hZZldlMVY3Z3l3VXZTQW9GUXlkcXVOSis4K1NmeCtVOGhpbnRZVXpFbjRncGJWNHRpaXhqTVQyZmpDUENDVXRjSVhpMVNUK3NnNkxmQjBMTFJHMmc9PRgAIAAoADDShJDEntDvAjjOzrSZhy9Azs60mYcvShxJY3VHRnA2Sng0OWtha1VNMHdhclZsSmE2N3c9Wh8iHfRGKzVFQzRvc01OUDdiMmNLTjRkU2pacFEzS0E9ZVaiUFYSrQIICRKoAgocamNpUWpTU1pqaENoenV4SUFjd2JDMEJjODcwPRKmAVo6QURxdEFad0NpUDhxZzZmYWFwTi9HSXV5ZExLREhsS1ZYZUN2WTY0MGlUZ0ZMdTJDK3huYUh2UDROOGZ0MUFaZU4xWVUwWmNINURRUmxZUE9ONkFkTzU5MkQ4MGFraEM5TW1ubHMrQnVlcFZ4WXk1cWR2TCswaG1vSk1aRkdiWlFVWXUvUGRzZXJQYk9QQjUzVVNpUStQVU5nam9TOUVPN0N3PT0YACACKAIw+7f/8JCR8QI46Majh58vQOnz4vGfL0ocZk1PRHVSOGVGb2R1QldUNHlQOVdCNjVhdktRPVofIh3oTXQxSXFTVzBYbGhSNk50dlJiSU56aVJyUkpzPWU9cbE2EsMBCAISvgEKHHpEVkdycnRaTGRNKzRCVHliZytIQ09yV2d5bz0SZlo6QURxdEFaeE9DZFFsdXhiV1cxb1kxUFZwdmFHYTU0ZVJsQUNPR0FyQjZWcGNqU2lNYXNoMzFlREVjS0hWd1NQQ1EyMHAvcmVNQUxzZzkwTm4yNC92S3plNUczRWZKMHhtZkE9PRgAIAAoADCciODlkJHxAjgAQABKHDV1c3kvY3BmcGkxRXRvQkhEZ1hJczBxYjRyQT1aAGUAAAAAEq0CCAcSqAIKHGR0R2FaNmxhZ2RNcDhtYmhCMVdHUWZWeGxrcz0SpgFaOkFEcXRBWndDaVA4cWc2ZmFhcE4vR0l1eWRMS0RIbEtWWGVDdlk2NDBpVGdGTHUyQys3bkkwaXJYSXJQRXNWWEFCZVkzQk40Qko4WEpudmNrbjhhMDd5TmNOVmxXaGNjTU1PeU1QVzA1dW9Tc2R5YkpQeThkcUxMeS9Ebm94RjVlWUt0L1puRnNxdFRUbWdkZ0I4b3ZtNHBFU2haaFRJUFFPUT09GAAgAigCMPu3//CQkfECOKCu0OP9LkDo8+Lxny9KHHkyZDdvMkxWcE1qVlc0TjZ6TFRkakNZRk5jOD1aHyIdoy9aRGRzNGwwZnRqaUNZVkp1V0RKOFp1ZlY5TT1lSJRb4hKtAggLEqgCChx5KzVsV1ZKUGJScklFbldVaVhtVTFhRm4vOVk9EqYBWjpBRHF0QVp3Q2lQOHFnNmZhYXBOL0dJdXlkTEtESGxLVlhlQ3ZZNjQwaVRnRkx1MkMrL29HeW5nMXBOWTRtTGU0NW5SdHdQbGJJeURaVXNKaFNnSUtDeCtEaUl5dkg1aU51VnJseDEwY2VRZElUTFpkOVNUWUM4U2tEOVNLYUZtbUJLWUd4VURRNkJCTEZoVWJRWEpKTytQWU02UlRJdU5BQVE9PRgAIAAoADDIy6uOvbTvAji4rsnSgy9AuK7J0oMvShwvMHRQT0xDc3F2R2xYNTRuaE1IRTAvSERtZms9Wh8iHdMrclp5R3h4WkR1UE9Fd3lzbUNyMHdjVzZTMFk9ZWeWnBISrAIIChKnAgocakl0ZU4zM1BnbUJKRm9SWTF3eVV0WnBsRFJnPRKmAVo6QURxdEFad0NpUDhxZzZmYWFwTi9HSXV5ZExLREhsS1ZYZUN2WTY0MGlUZ0ZMdTJDKy9EVVlZbVRTZDcza0FsTThIQUlJamJSLzN5SmVsOEZSbnhMd1RkQ2wyTGdycFFqTDZxRXB3YWQzL3IyUHdheHJGL2NWUG92U0hqamptdk85UUs1blYzbVh2YXZMMEYxSE5xeHRZK1psMDNJb09ldFlnPT0YACAAKAAw8r2P/cWU7wI4hNSyx/8uQITUssf/LkocMHFOajFjTUtONUZyQjcxTm5JQ3BvM2taQkdBPVoeIhxNejJQSDJqMDUyUCtRWHBnRVdqbEpxaWVtNkU9ZVuFQ2MSrQIICBKoAgocSDczcmp4UFZUS3FqN2NEWEF1MW0vTmxNcHdnPRKmAVo6QURxdEFad0NpUDhxZzZmYWFwTi9HSXV5ZExLREhsS1ZYZUN2WTY0MGlUZ0ZMdTJDKzlYS05ZaEhxbkpySWM4eEs5SDFkMGRvNE9UU05ETlkwRlI4VUZKU09rWnJjbC9RZTh0ZGxqczlhbFhac3FSTXlrb3FQeGJFREgwa1Y3NUF5ZkUxY2VBRkxsUWt2MzFvd3d4UC9Hdmd2c0pqTnhIeVpRPT0YACACKAIw+7f/8JCR8QI4x4aJhI4vQOjz4vGfL0ocTlk1U0NDOWNBUUpQVnRrQTBPWTI0WStZNjRRPVofIh3RNXVXQXJGZUJIMjhjVlVDOForYzJiNDB0a1U4PWUaAsGBEqwCCAYSpwIKHERjSTJFNVhWSzZWZm94SXB0dWFYQzd5WE9pUT0SpgFaOkFEcXRBWndDaVA4cWc2ZmFhcE4vR0l1eWRMS0RIbEtWWGVDdlk2NDBpVGdGTHUyQysxL3NiRWJCaExteWZVcGplamtMckxESWQzMDlQRllIQXdjT1ZlVnVzK3NnK2hDYTkwQ2liTjgxRkZFZWJmdkdNK1J1SEh1MXhGRVZYWWk4VDFYZURPZVV4bFp6aXdPSk9nbHAzdHAwdFl0NnJhQW1ndz09GAAgAigCMPu3//CQkfECOJ7atPTvLkDm8+Lxny9KHHpaYUNab09wd2dQMXQ2R0E3V2JXN3VsZ1c3Zz1aHiIcRk9xem9rdlJDSHRMU3V0Y2V3ZnJPQW91MGowPWU4+TkzEqsBCAESpgEKHC9FS0xhVVV5TWRiS0VrMUJhMlVpbnlEbmY3ST0STlo6QURxdEFaeGZqNFlOVTR5K3BTVnhWY2JIYlUrcDlnSTdLM3YxQXBxMVQ2ZmxyTHRqbkNieVg4RmtMZmRTc1dMZ1k3SitkS2FFaW5KZxgAIAAoADCciODlkJHxAjgAQABKHFUrR0dJdFpFRHBac0lTbE9VYUlUdUlMZE1uST1aAGUAAAAAEqwCCAUSpwIKHGJqRDNuUUlFV3NpdmllZTF3dERvWU5uQkFZYz0SpgFaOkFEcXRBWndDaVA4cWc2ZmFhcE4vR0l1eWRMS0RpNElLQ2dtK1Z4UEErczlCb25kRWNCb203Z2RCd3Racys1Y1BIMTY1b3kvOWlNMlRDVlRQc3F5UEpuc3pWNzlWVUxvR2VRb2lySy9WcEo2ZUZBb3FlVGJGU0M0Q25DbjhJQWFBVURIemhmNUQzUGVTbVREWlVsYWkzc2pKUWtVS0FpaGhQdz09GAAgAigCMPu3//CQkfECOIHGnO7vLkDm8+Lxny9KHHJ1ajdVSHVGdHpjSG1iZlU1c2ZvaEJnMVRtcz1aHiIcNnN2UnYrbG5hQTAvSjN2M3lEcDhFbTZ6ZC84PWXFz5ABEsMBCAMSvgEKHHk1V0UyN3VJNnZYL0RlSVNISnpuak1xdVdXcz0SZlo6QURxdEFad1RUeGlRbHJjUkxEc1N1Y0U0eVBOYzhlc0VRcEdOc2R6NTJRMTVWNEw3SVlxalovRWlLaGhiTVVNaXVSczc4Y2s4bDFtWDBzOVMxbTM5Y2ZTZXBrRHRoZHljU2c9PRgAIAAoADCciODlkJHxAjgAQABKHDc5bCtMUkVVcGlhRXZERCtHNDNjcFhTdHdCYz1aAGUAAAAAGAEg6vXi8Z8vKAA=",
+   "version": 1
+}
