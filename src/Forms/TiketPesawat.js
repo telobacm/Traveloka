@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Form, Button, Modal } from "react-bootstrap";
 import axios from "axios";
 import { useCookies } from "react-cookie";
+import BandaraAsal from "./BandaraAsal";
+import BandaraTujuan from "./BandaraTujuan";
+import JumlahPenumpang from "./JumlahPenumpang";
 
 const apicall = axios.create({ withCredentials: true });
 const arrbulan = ["Jan", "Feb", "Mar", "Apr", "Mei", "Jun", "Jul", "Ags", "Sep", "Okt", "Nov", "Des"];
@@ -14,19 +17,23 @@ const cookie =
 export default function TiketPesawat() {
   const [cekTanggalPulang, setCekTanggalPulang] = useState(false);
   const [satuMulti, setSatuMulti] = useState("satu");
+  const [numSeats, setnumSeats] = useState({ numAdults: 1, numChildren: 0, numInfants: 1 });
+  const [seatPublishedClass, setSeatPublishedClass] = useState(false);
   //   const [cookies, setCookie, removeCookie] = useCookies(["tvs", "bm_sz", "bm_sv", "_abck"]);
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    switch (name) {
-      case "satuMulti":
-        setSatuMulti(value);
-    }
-  };
+  // const handleChange = (e) => {
+  //   const { name, value } = e.target;
+  //   switch (name) {
+  //     case "satuMulti":
+  //       setSatuMulti(value);
+  //       break;
+  //   }
+  // };
 
-  const onCheck = (e) => {
-    console.log(e.target.checked);
-  };
+  useEffect(() => {
+    console.log(seatPublishedClass);
+    console.log(satuMulti);
+  });
 
   const API_URL = process.env.REACT_APP_API_URL;
   const axiosPost = async (e) => {
@@ -114,35 +121,39 @@ export default function TiketPesawat() {
     //   headers,
     // })
   };
-  useEffect(() => {
-    console.log(cekTanggalPulang);
-    console.log(satuMulti);
-  });
 
   return (
     <Container>
       <Form>
         <Row className="mt-3">
           <Form.Group className="p-2" controlId="Satu/Multi">
-            <Form.Check type="radio" name="satuMulti" id="1" value="satu" label="Sekali Jalan / Pulang Pergi" onChange={(e) => handleChange(e)} defaultChecked />
-            <Form.Check type="radio" name="satuMulti" id="2" value="multi" label="Multi-Kota" onChange={(e) => handleChange(e)} />
+            <Form.Check type="radio" name="satuMulti" id="1" value="satu" label="Sekali Jalan / Pulang Pergi" onChange={(e) => setSatuMulti(e.target.value)} defaultChecked />
+            <Form.Check type="radio" name="satuMulti" id="2" value="multi" label="Multi-Kota" onChange={(e) => setSatuMulti(e.target.value)} />
           </Form.Group>
         </Row>
         {satuMulti === "satu" ? (
-          <Row>
-            <Form.Group className="p-2" controlId="KotaAsal">
-              <Form.Label>Kota Asal</Form.Label>
-              <Form.Control type="text" placeholder="Kota Asal" />
-            </Form.Group>
-            <Form.Group className="p-2" controlId="KotaTujuan">
-              <Form.Label>Kota Tujuan</Form.Label>
-              <Form.Control type="text" placeholder="Kota Tujuan" />
-            </Form.Group>
-            <Form.Group className="p-2" controlId="JumlahPenumpang">
-              <Form.Label>Jumlah Penumpang</Form.Label>
-              <Form.Control type="text" placeholder="1 Dewasa, 0 Anak, 0 Bayi" />
-            </Form.Group>
-          </Row>
+          <>
+            <Row>
+              <Col>
+                <Form.Group className="p-2" controlId="KotaAsal">
+                  <Form.Label>Kota Asal</Form.Label>
+                  <BandaraAsal />
+                </Form.Group>
+              </Col>
+              <Col>
+                <Form.Group className="p-2" controlId="exampleForm.ControlSelect1">
+                  <Form.Label>Kota Tujuan</Form.Label>
+                  <BandaraTujuan />
+                </Form.Group>
+              </Col>
+            </Row>
+            <Row>
+              <Form.Group className="p-2" controlId="JumlahPenumpang">
+                <Form.Label>Jumlah Penumpang</Form.Label>
+                <JumlahPenumpang numAdults={numSeats.numAdults} numChildren={numSeats.numChildren} numInfants={numSeats.numInfants} />
+              </Form.Group>
+            </Row>
+          </>
         ) : (
           <>
             <Row>
@@ -193,13 +204,20 @@ export default function TiketPesawat() {
             )}
             <Form.Group className="p-2">
               <Form.Label>Kelas Penerbangan</Form.Label>
-              <Form.Control list="classes" name="class" id="class" type="text" placeholder="Economy" />
-              <datalist id="classes">
-                <option value="Economy" />
-                <option value="Premium Economy" />
-                <option value="Business" />
-                <option value="First Class" />
-              </datalist>
+              <Form.Control onClick={(e) => setSeatPublishedClass(e.target.value)} as="select">
+                <option name="seatPublishedClass" value="ECONOMY">
+                  Economy
+                </option>
+                <option name="seatPublishedClass" value="PREMIUM_ECONOMY">
+                  Premium Economy
+                </option>
+                <option name="seatPublishedClass" value="BUSINESS">
+                  Business
+                </option>
+                <option name="seatPublishedClass" value="FIRST">
+                  First Class
+                </option>
+              </Form.Control>
             </Form.Group>
           </Row>
         ) : (
