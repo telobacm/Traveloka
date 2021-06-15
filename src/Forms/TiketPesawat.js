@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Form, Button, Modal } from "react-bootstrap";
 import axios from "axios";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { useCookies } from "react-cookie";
 import BandaraAsal from "./BandaraAsal";
 import BandaraTujuan from "./BandaraTujuan";
@@ -39,7 +41,15 @@ export default function TiketPesawat() {
       error = "Maksimum 7 penumpang (dewasa dan anak)";
     }
     if (error) {
-      alert(error);
+      toast("😩" + error + "😩", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
     } else {
       setNumSeats(data);
     }
@@ -143,6 +153,7 @@ export default function TiketPesawat() {
   };
   return (
     <Container>
+      <ToastContainer />
       <Form>
         <Form.Group className="p-2" controlId="Satu/Multi">
           <Row className="mt-3 flek">
