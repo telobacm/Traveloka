@@ -12,6 +12,7 @@ function App() {
       <TiketPesawat />
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
+        <h2>Traveluka Abal-Abal</h2>
       </header>
     </div>
   );

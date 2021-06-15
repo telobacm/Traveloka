@@ -1,5 +1,5 @@
 import React from "react";
-import { Form } from "react-bootstrap";
+import { Col, Form } from "react-bootstrap";
 import Select from "react-select";
 import "./Forms.css";
 
@@ -219,5 +219,12 @@ const bandara = [
   { value: "SOQ", label: "(SOQ) Sorong, Domine Eduard Osok" },
 ];
 export default function BandaraAsal() {
-  return <Select options={bandara} className="selectBandara" defaultValue={bandara[9]} />;
+  return (
+    <Col>
+      <Form.Group className="p-2" controlId="KotaAsal">
+        <Form.Label>Kota Asal</Form.Label>
+        <Select options={bandara} className="selects" defaultValue={bandara[9]} />
+      </Form.Group>
+    </Col>
+  );
 }

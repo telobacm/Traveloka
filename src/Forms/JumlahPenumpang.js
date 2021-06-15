@@ -1,120 +1,55 @@
-import { Row, Form, Dropdown, Button } from "react-bootstrap";
+import { Row, Col, Form, Dropdown, Button } from "react-bootstrap";
 import React from "react";
+import "./Forms.css";
 
-function JumlahPenumpang({ numAdults, numChildren, numInfants }) {
+export default function JumlahPenumpang({ n, jumlahPenumpang }) {
   return (
-    // <Form.Control as="select">
-    //   <option>
-    //     Dewasa
-    //     <Button>-</Button>
-    //     {numAdults}
-    //     <Button>+</Button>
-    //   </option>
-    //   <option>
-    //     Anak
-    //     <Button>-</Button>
-    //     {numChildren}
-    //     <Button>+</Button>
-    //   </option>
-    //   <option>
-    //     Bayi
-    //     <Button>-</Button>
-    //     {numInfants}
-    //     <Button>+</Button>
-    //   </option>
-    // </Form.Control>
-
-    <Dropdown>
-      <Dropdown.Toggle variant="primary" id="dropdown-basic">
-        Jumlah Penumpang
-      </Dropdown.Toggle>
-
-      <Dropdown.Menu className="display-2">
-        <Dropdown.Item>
-          Dewasa
-          <Button>-</Button>
-          {numAdults}
-          <Button>+</Button>
-        </Dropdown.Item>
-        <Dropdown.Item>
-          Anak
-          <Button>-</Button>
-          {numChildren}
-          <Button>+</Button>
-        </Dropdown.Item>
-        <Dropdown.Item>
-          Bayi
-          <Button>-</Button>
-          {numInfants}
-          <Button>+</Button>
-        </Dropdown.Item>
-      </Dropdown.Menu>
-    </Dropdown>
-    // <Row>
-    //   <Form.Group className="px-3 py-1">
-    //     <Form.Label>Dewasa</Form.Label>
-    //     <Form.Control as="select">
-    //       <option value="1" selected>
-    //         1
-    //       </option>
-    //       <option value="2">2</option>
-    //       <option value="3">3</option>
-    //       <option value="4">4</option>
-    //       <option value="5">5</option>
-    //       <option value="6">6</option>
-    //       <option value="7">7</option>
-    //     </Form.Control>
-    //   </Form.Group>
-    //   <Form.Group className="px-3 py-1">
-    //     <Form.Label>Anak</Form.Label>
-    //     <Form.Control as="select">
-    //       <option value="0" selected>
-    //         0
-    //       </option>
-    //       <option value="1">1</option>
-    //       <option value="2">2</option>
-    //       <option value="3">3</option>
-    //       <option value="4">4</option>
-    //       <option value="5">5</option>
-    //       <option value="6">6</option>
-    //     </Form.Control>
-    //   </Form.Group>
-    //   <Form.Group className="px-3 py-1">
-    //     <Form.Label>Bayi</Form.Label>
-    //     <Form.Control as="select">
-    //       <option value="0" selected>
-    //         0
-    //       </option>
-    //       <option value="1">1</option>
-    //       <option value="2">2</option>
-    //       <option value="3">3</option>
-    //       <option value="4">4</option>
-    //     </Form.Control>
-    //   </Form.Group>
-    // </Row>
-
-    //Masih gagal. Tag Button hanya terbaca sebagai[object Object]
-    // <Form.Control as="select">
-    //   <option>
-    //     Dewasa
-    //     <Button>-</Button>
-    //     {numAdults}
-    //     <Button>+</Button>
-    //   </option>
-    //   <option>
-    //     Anak
-    //     <Button>-</Button>
-    //     {numChildren}
-    //     <Button>+</Button>
-    //   </option>
-    //   <option>
-    //     Bayi
-    //     <Button>-</Button>
-    //     {numInfants}
-    //     <Button>+</Button>
-    //   </option>
-    // </Form.Control>
+    <>
+      <Form.Group className="p-2" controlId="JumlahPenumpang">
+        <Form.Label>Jumlah Penumpang</Form.Label>
+        <Dropdown>
+          <Dropdown.Toggle className="likeForm" id="dropdown-basic">
+            {n.numAdults} Dewasa, {n.numChildren} Anak, {n.numInfants} Bayi{" "}
+          </Dropdown.Toggle>
+          <Dropdown.Menu className="display-2 likeForm">
+            {Object.keys(n).map((ns) => {
+              let title = "";
+              let angka = "";
+              switch (ns) {
+                case "numAdults":
+                  title = <label>Dewasa</label>;
+                  angka = <label>{n[ns]}</label>;
+                  break;
+                case "numChildren":
+                  title = <label>Anak</label>;
+                  angka = <label>{n[ns]}</label>;
+                  break;
+                case "numInfants":
+                  title = <label>Bayi</label>;
+                  angka = <label>{n[ns]}</label>;
+              }
+              return (
+                <Dropdown.Item onClick={() => null}>
+                  <Row className="menuItem">
+                    <Col xs={5}>
+                      <label>{title}</label>
+                    </Col>
+                    <Col xs={4}>
+                      <Button variant="outline-danger" className="btnPenumpang" onClick={(e) => jumlahPenumpang(ns, "-")}>
+                        -
+                      </Button>
+                      {angka}
+                      <Button variant="outline-success" className="btnPenumpang" onClick={(e) => jumlahPenumpang(ns, "+")}>
+                        +
+                      </Button>
+                    </Col>
+                  </Row>
+                </Dropdown.Item>
+              );
+            })}
+          </Dropdown.Menu>
+        </Dropdown>
+      </Form.Group>
+    </>
   );
 }
-
-export default JumlahPenumpang;
