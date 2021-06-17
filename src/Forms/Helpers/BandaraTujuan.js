@@ -1,7 +1,7 @@
 import React from "react";
 import { Col, Form } from "react-bootstrap";
 import Select from "react-select";
-import "./Forms.css";
+import "../Forms.css";
 
 const bandara = [
   { value: "BTJ", label: "(BTJ) Banda Aceh, Sultan Iskandar Muda" },
@@ -218,12 +218,12 @@ const bandara = [
   { value: "UGU", label: "(UGU) Paniai, Zugapa" },
   { value: "SOQ", label: "(SOQ) Sorong, Domine Eduard Osok" },
 ];
-export default function BandaraTujuan() {
+export default function BandaraTujuan({ set }) {
   return (
     <Col>
       <Form.Group className="p-2" controlId="KotaAsal">
         <Form.Label>Kota Tujuan</Form.Label>
-        <Select options={bandara} className="selects" defaultValue={bandara[16]} />
+        <Select options={bandara} className="selects" defaultValue={bandara[16]} onChange={(e) => set(e.value)} />
       </Form.Group>
     </Col>
   );

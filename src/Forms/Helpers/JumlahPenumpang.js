@@ -1,6 +1,6 @@
 import { Row, Col, Form, Dropdown, Button } from "react-bootstrap";
 import React from "react";
-import "./Forms.css";
+import "../Forms.css";
 
 export default function JumlahPenumpang({ n, jumlahPenumpang }) {
   return (

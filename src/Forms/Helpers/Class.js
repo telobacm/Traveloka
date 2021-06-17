@@ -2,7 +2,7 @@ import React from "react";
 import { Col, Form } from "react-bootstrap";
 import Select from "react-select";
 import AsyncSelect from "react-select/async";
-import "./Forms.css";
+import "../Forms.css";
 
 const classes = [
   { label: "Economy", value: "ECONOMY" },
