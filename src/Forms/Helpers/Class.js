@@ -13,11 +13,11 @@ const classes = [
 
 export default function Class({ set }) {
   return (
-    <>
+    <div>
       <Form.Group className="p-2" controlId="KelasPenerbangan">
         <Form.Label>Kelas Penerbangan</Form.Label>
         <Select options={classes} className="selects likeForm" onChange={(e) => set(e.value)} defaultValue={[classes[0]]}></Select>
       </Form.Group>
-    </>
+    </div>
   );
 }

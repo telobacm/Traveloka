@@ -12,9 +12,9 @@ export default function TanggalPulang() {
   const [today, setToday] = useState(new Date());
   const pilih = console.log(today);
   return (
-    <>
+    <div>
       <br />
       <DatePicker className="dateForm" dateFormat="dd-MM-yyyy" minDate={new Date()} selected={today} onChange={(date) => setToday(date)} />
-    </>
+    </div>
   );
 }

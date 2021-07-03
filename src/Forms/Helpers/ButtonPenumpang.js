@@ -22,7 +22,7 @@ export default function JumlahPenumpang({ n, jumlahPenumpang }) {
             angka = <label>{n[ns]}</label>;
         }
         return (
-          <>
+          <span>
             <Button variant="outline-danger" className="btnPenumpang" onClick={(e) => jumlahPenumpang(ns, "-")}>
               -
             </Button>
@@ -33,7 +33,7 @@ export default function JumlahPenumpang({ n, jumlahPenumpang }) {
             <Button variant="outline-success" className="btnPenumpang" onClick={(e) => jumlahPenumpang(ns, "+")}>
               +
             </Button>
-          </>
+          </span>
         );
       })}
     </Form.Group>

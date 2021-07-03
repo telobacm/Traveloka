@@ -1,10 +1,19 @@
 import { Row, Col, Form, Dropdown, Button } from "react-bootstrap";
-import React from "react";
+import React, { useState } from "react";
 import "../Forms.css";
 
 export default function JumlahPenumpang({ n, jumlahPenumpang }) {
+  const [open, setopen] = useState(true);
+  const openDropdown = (e) => {
+    // console.log(e);
+    setopen(!open);
+    console.log(open);
+    // if (!open) {
+    e.stopPropagation();
+    // }
+  };
   return (
-    <>
+    <div>
       <Form.Group className="p-2" controlId="JumlahPenumpang">
         <Form.Label>Jumlah Penumpang</Form.Label>
         <Dropdown>
@@ -29,7 +38,7 @@ export default function JumlahPenumpang({ n, jumlahPenumpang }) {
                   angka = <label>{n[ns]}</label>;
               }
               return (
-                <Dropdown.Item onClick={() => null}>
+                <Dropdown.Item onClick={openDropdown}>
                   <Row className="menuItem">
                     <Col xs={5}>
                       <label>{title}</label>
@@ -50,6 +59,6 @@ export default function JumlahPenumpang({ n, jumlahPenumpang }) {
           </Dropdown.Menu>
         </Dropdown>
       </Form.Group>
-    </>
+    </div>
   );
 }

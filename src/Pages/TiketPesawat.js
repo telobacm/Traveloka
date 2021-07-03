@@ -1,18 +1,20 @@
 import React, { useState, useEffect } from "react";
-import { Container, Row, Col, Form, Button, Modal } from "react-bootstrap";
+import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useCookies } from "react-cookie";
-import BandaraAsal from "./Helpers/BandaraAsal";
-import BandaraTujuan from "./Helpers/BandaraTujuan";
-import JumlahPenumpang from "./Helpers/JumlahPenumpang";
-import Class from "./Helpers/Class";
-import "./Forms.css";
-import TanggalPergi from "./Helpers/TanggalPergi";
-import TanggalPulang from "./Helpers/TanggalPulang";
-import TanggalPergiDobel from "./Helpers/TanggalPergiDobel";
-import ButtonPenumpang from "./Helpers/ButtonPenumpang";
+import { useHistory } from "react-router-dom";
+import BandaraAsal from "../Forms/Helpers/BandaraAsal";
+import BandaraTujuan from "../Forms/Helpers/BandaraTujuan";
+import JumlahPenumpang from "../Forms/Helpers/JumlahPenumpang";
+import Class from "../Forms/Helpers/Class";
+import "./Pages.css";
+import TanggalPergi from "../Forms/Helpers/TanggalPergi";
+import TanggalPulang from "../Forms/Helpers/TanggalPulang";
+import TanggalPergiDobel from "../Forms/Helpers/TanggalPergiDobel";
+import ButtonPenumpang from "../Forms/Helpers/ButtonPenumpang";
+import Template from "../Components/Template";
 
 const apicall = axios.create({ withCredentials: true });
 
@@ -26,6 +28,7 @@ export default function TiketPesawat() {
   const [numSeats, setNumSeats] = useState({ numAdults: 1, numChildren: 0, numInfants: 0 });
   const [kelas, setkelas] = useState(false);
 
+  const history = useHistory();
   const setSource = (e) => {
     setAsal(e);
   };
@@ -126,82 +129,85 @@ export default function TiketPesawat() {
       funnelId: "null",
       funnelSource: "null",
     };
-    const response = await fetch("https://www.traveloka.com/api/v2/flight/search/oneway", {
-      method: "POST",
-      credentials: "include",
-      headers,
-      mode: "same-origin",
-      body: JSON.stringify(body),
-    });
-    const test = response.json();
-    console.log(test);
+    // const response = await fetch("https://www.traveloka.com/api/v2/flight/search/oneway", {
+    //   method: "POST",
+    //   credentials: "include",
+    //   headers,
+    //   mode: "same-origin",
+    //   body: JSON.stringify(body),
+    // });
+    const response = await axios.post("http://localhost:4000", body);
+    // const test = response.json();
+    console.log(response);
   };
   return (
-    <Container>
-      <ToastContainer />
-      <Form>
-        <Form.Group className="p-2" controlId="Satu/Multi">
-          <Row className="mt-3 flek">
-            <Col xs={3}>
-              <Form.Check type="radio" name="satuMulti" id="1" value="satu" label="Sekali Jalan / Pulang Pergi" onChange={(e) => setSatuMulti(e.target.value)} defaultChecked />
-            </Col>
-            <Col xs={2}>
-              <Form.Check type="radio" name="satuMulti" id="2" value="multi" label="Multi-Kota" onChange={(e) => setSatuMulti(e.target.value)} />
-            </Col>
-          </Row>
-        </Form.Group>
-        {satuMulti === "satu" ? (
-          // ///// Satu Kota //////////////////////////
-          <>
-            <Row>
-              <BandaraAsal set={setSource} />
-              <BandaraTujuan set={setDesti} />
-              <JumlahPenumpang n={numSeats} jumlahPenumpang={jumlahPenumpang} />
+    <Template>
+      <Container>
+        <ToastContainer />
+        <Form>
+          <Form.Group className="p-2" controlId="Satu/Multi">
+            <Row className="mt-3 flek">
+              <Col xs={3}>
+                <Form.Check type="radio" name="satuMulti" id="1" value="satu" label="Sekali Jalan / Pulang Pergi" onChange={(e) => setSatuMulti(e.target.value)} defaultChecked />
+              </Col>
+              <Col xs={2}>
+                <Form.Check type="radio" name="satuMulti" id="2" value="multi" label="Multi-Kota" onChange={(e) => setSatuMulti(e.target.value)} />
+              </Col>
             </Row>
-            <Row>
-              <ButtonPenumpang n={numSeats} jumlahPenumpang={jumlahPenumpang}></ButtonPenumpang>
-            </Row>
-            <Row>
-              <TanggalPergi set={setTglPergi} />
+          </Form.Group>
+          {satuMulti === "satu" ? (
+            // ///// Satu Kota //////////////////////////
+            <div>
+              <Row>
+                <BandaraAsal set={setSource} />
+                <BandaraTujuan set={setDesti} />
+                <JumlahPenumpang n={numSeats} jumlahPenumpang={jumlahPenumpang} />
+              </Row>
+              <Row>
+                <ButtonPenumpang n={numSeats} jumlahPenumpang={jumlahPenumpang}></ButtonPenumpang>
+              </Row>
+              <Row>
+                <TanggalPergi set={setTglPergi} />
 
-              <Form.Group className="p-2" controlId="cekPP">
-                <Form.Check type="checkbox" label="Tanggal Pulang" name="cekPP" onChange={(e) => setCekPP(e.target.checked)} />
-              </Form.Group>
-              {cekPP && (
-                <Form.Group className="p-2" controlId="TanggalPulang">
-                  <Form.Label>Tanggal Pulang</Form.Label>
-                  <TanggalPulang />
+                <Form.Group className="p-2" controlId="cekPP">
+                  <Form.Check type="checkbox" label="Tanggal Pulang" name="cekPP" onChange={(e) => setCekPP(e.target.checked)} />
                 </Form.Group>
-              )}
-              <Class set={setClass}></Class>
-            </Row>
-          </>
-        ) : (
-          // ///// Multi Kota //////////////////////////
-          <>
-            <Row>
-              <BandaraAsal set={setSource} />
-              <BandaraTujuan set={setDesti} />
-              <TanggalPergi set={setTglPergi} />
-            </Row>
-            <Row>
-              <BandaraAsal set={setSource} />
-              <BandaraTujuan set={setDesti} />
-              <Form.Group className="p-2" controlId="TanggalPergiDobel">
-                <Form.Label>Tanggal Pergi</Form.Label>
-                <TanggalPergiDobel />
-              </Form.Group>
-            </Row>
-            <Row>
-              <JumlahPenumpang n={numSeats} jumlahPenumpang={jumlahPenumpang} />
-              <Class set={setClass}></Class>
-            </Row>
-          </>
-        )}
-        <Button variant="primary" onClick={(e) => axiosPost(e)} type="submit" className="mb-4">
-          Cari Tiket
-        </Button>
-      </Form>
-    </Container>
+                {cekPP && (
+                  <Form.Group className="p-2" controlId="TanggalPulang">
+                    <Form.Label>Tanggal Pulang</Form.Label>
+                    <TanggalPulang />
+                  </Form.Group>
+                )}
+                <Class set={setClass}></Class>
+              </Row>
+            </div>
+          ) : (
+            // ///// Multi Kota //////////////////////////
+            <div>
+              <Row>
+                <BandaraAsal set={setSource} />
+                <BandaraTujuan set={setDesti} />
+                <TanggalPergi set={setTglPergi} />
+              </Row>
+              <Row>
+                <BandaraAsal set={setSource} />
+                <BandaraTujuan set={setDesti} />
+                <Form.Group className="p-2" controlId="TanggalPergiDobel">
+                  <Form.Label>Tanggal Pergi</Form.Label>
+                  <TanggalPergiDobel />
+                </Form.Group>
+              </Row>
+              <Row>
+                <JumlahPenumpang n={numSeats} jumlahPenumpang={jumlahPenumpang} />
+                <Class set={setClass}></Class>
+              </Row>
+            </div>
+          )}
+          <Button variant="primary" onClick={(e) => axiosPost(e)} type="submit" className="mb-4">
+            Cari Tiket
+          </Button>
+        </Form>
+      </Container>
+    </Template>
   );
 }

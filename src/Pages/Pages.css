@@ -1,0 +1,24 @@
+.App {
+  text-align: center;
+}
+
+.flek {
+  display: flex !important;
+}
+
+.btn-tickets {
+  width: 30vh;
+  height: 30vh;
+  color: rgb(14, 14, 14) !important;
+  background-color: white !important;
+  border: coral solid 1.2vh !important;
+  border-radius: 6vh !important;
+  margin: 1rem !important;
+  align-items: center;
+}
+
+.btn-label {
+  font-family: Ubuntu;
+  font-size: 1.3rem;
+  font-weight: 900;
+}
