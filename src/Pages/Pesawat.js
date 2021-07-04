@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Container, Row, Col, Form, Button } from "react-bootstrap";
+import { Container, Row, Col, Form, Modal, Button } from "react-bootstrap";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -16,9 +16,10 @@ import TanggalPergiDobel from "../Forms/Helpers/TanggalPergiDobel";
 import ButtonPenumpang from "../Forms/Helpers/ButtonPenumpang";
 import Template from "../Components/Template";
 
+const API_URL = process.env.REACT_APP_API_URL;
 const apicall = axios.create({ withCredentials: true });
 
-export default function TiketPesawat() {
+export default function Pesawat() {
   const [cekPP, setCekPP] = useState(false);
   const [satuMulti, setSatuMulti] = useState("satu");
   const [asal, setAsal] = useState(false);
@@ -27,6 +28,9 @@ export default function TiketPesawat() {
   // const [dates, setDates] = useState(false);
   const [numSeats, setNumSeats] = useState({ numAdults: 1, numChildren: 0, numInfants: 0 });
   const [kelas, setkelas] = useState(false);
+  const [respon, setRespon] = useState({ data: { maskapai: false, harga: false, asal: asal, tujuan: tujuan, penumpang: numSeats, tanggal: flightDate, kelas: kelas } });
+
+  const [show, setShow] = useState(false);
 
   const history = useHistory();
   const setSource = (e) => {
@@ -80,7 +84,7 @@ export default function TiketPesawat() {
     // console.log("tujuan", tujuan);
     // console.log("kelas", kelas);
     // console.log("jumlah", numSeats);
-    console.log("tanggal", flightDate);
+    // console.log("tanggal", flightDate);
   });
 
   const API_URL = process.env.REACT_APP_API_URL;
@@ -93,20 +97,20 @@ export default function TiketPesawat() {
       // path: "/api/v2/flight/search/oneway",
       // scheme: "https",
       // withCredentials: true,
-      accept: "application/json",
-      "accept-encoding": "gzip, deflate, br",
-      "accept-language": "id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7",
-      "content-length": "524",
-      "content-type": "application/json",
-      // cookie: cookie,
-      // dnt: "1",
-      origin: "https://www.traveloka.com",
+      // accept: "application/json",
+      // "accept-encoding": "gzip, deflate, br",
+      // "accept-language": "id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7",
+      // "content-length": "524",
+      // "content-type": "application/json",
+      // // cookie: cookie,
+      // // dnt: "1",
+      // origin: "https://www.traveloka.com",
       // referer: "https://www.traveloka.com/id-id/flight/fullsearch?ap=JKTA.KNO&dt=12-06-2021.NA&ps=1.0.0&sc=ECONOMY",
       // "sec-ch-ua-mobile": "?0",
       // "sec-fetch-dest": "empty",
       // "sec-fetch-mode": "cors",
       // "sec-fetch-site": "same-origin",
-      "x-domain": "flight",
+      // "x-domain": "flight",
       // "x-nonce": "6801451e-0cc9-493e-8acf-a0a76aeb6bbc",
       // "x-route-prefix": "id-id",
     };
@@ -117,17 +121,17 @@ export default function TiketPesawat() {
       flightDate: flightDate,
       seatPublishedClass: kelas,
       currency: "IDR",
-      isReschedule: false,
-      locale: "id_ID",
-      flexibleTicket: false,
-      newResult: true,
-      seqNo: null,
-      searchId: "4e5404a3-c1b5-4f25-8b42-b9880f27a57f",
-      visitId: "1ed8dd60-64ff-4689-9a65-53717fb4bb39",
-      utmId: null,
-      utmSource: null,
-      funnelId: "null",
-      funnelSource: "null",
+      // isReschedule: false,
+      // locale: "id_ID",
+      // flexibleTicket: false,
+      // newResult: true,
+      // seqNo: null,
+      // searchId: "4e5404a3-c1b5-4f25-8b42-b9880f27a57f",
+      // visitId: "1ed8dd60-64ff-4689-9a65-53717fb4bb39",
+      // utmId: null,
+      // utmSource: null,
+      // funnelId: "null",
+      // funnelSource: "null",
     };
     // const response = await fetch("https://www.traveloka.com/api/v2/flight/search/oneway", {
     //   method: "POST",
@@ -136,10 +140,17 @@ export default function TiketPesawat() {
     //   mode: "same-origin",
     //   body: JSON.stringify(body),
     // });
-    const response = await axios.post("http://localhost:4000", body);
+    const response = await axios.post(API_URL + "/tiket-pesawat", body);
+    console.log("iki response", response);
+    // localStorage.setItem("response", JSON.stringify(response));
+    // setRespon(JSON.parse(localStorage.getItem("response")));
+    setRespon(response);
+    // console.log("harga", respon.data);
+    setShow(true);
     // const test = response.json();
-    console.log(response);
+    // history.push("/pesawat-tersedia");
   };
+  console.log("state respon", respon);
   return (
     <Template>
       <Container>
@@ -208,6 +219,28 @@ export default function TiketPesawat() {
           </Button>
         </Form>
       </Container>
+      <Modal show={show} onHide={() => setShow(false)}>
+        <Modal.Header closeButton>
+          <Modal.Title>Tiket Yang Tersedia</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Bandara Asal: {respon.data.asal}</Modal.Body>
+        <Modal.Body>Bandara Tujuan: {respon.data.tujuan}</Modal.Body>
+        <Modal.Body>Maskapai: {respon.data.maskapai}</Modal.Body>
+        <Modal.Body>Kelas: {respon.data.kelas}</Modal.Body>
+        {/* <Modal.Body>
+          Jumlah Penumpang: {respon.data.penumpang.numAdults} Dewasa, {respon.data.penumpang.numChildren} Anak, {respon.data.penumpang.numInfants} Bayi
+        </Modal.Body> */}
+        <Modal.Body>Tanggal Keberangkatan: {respon.data.tanggal}</Modal.Body>
+        <Modal.Body>Maskapai: {respon.data.maskapai}</Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={() => setShow(false)}>
+            Close
+          </Button>
+          <Button variant="primary" onClick={() => setShow(false)}>
+            Save Changes
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </Template>
   );
 }

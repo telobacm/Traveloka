@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./Pages/Home";
-import TiketPesawat from "./Pages/TiketPesawat";
+import Pesawat from "./Pages/Pesawat";
+// import ResPesawat from "./Pages/ResPesawat";
 import Hotel from "./Pages/Hotel";
 import Kereta from "./Pages/Kereta";
 import Delman from "./Pages/Delman";
@@ -14,8 +15,11 @@ function App() {
           <Home />
         </Route>
         <Route path="/tiket-pesawat">
-          <TiketPesawat />
+          <Pesawat />
         </Route>
+        {/* {<Route path="/pesawat-tersedia">
+          <ResPesawat />
+        </Route>} */}
         <Route path="/tiket-kereta">
           <Kereta />
         </Route>
